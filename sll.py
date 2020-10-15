@@ -160,3 +160,24 @@ class SLL:
             previous.set_next(temp)
         print("Printing the final list below:S")
         self.printList()
+
+    def reverse(self):
+        """Reverse the order of elements in the linked list."""
+        if self.head is None:
+            return "The list is currently empty. Cannot be reversed."
+        elif self.head is not None and self.size() == 1:
+            return "There is only one item in the list. So, consider it reversed."
+        else:
+            current = self.head
+            previous = None
+            next = None
+
+            while current is not None:
+                next = current.get_next()
+                current.set_next(previous)
+                previous = current
+                current = next
+            self.head = previous
+
+            print("Printing the updated list below:")
+            self.printList()
