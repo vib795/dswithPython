@@ -1,8 +1,8 @@
 # Data Structures with Python
 
-## Implemetation by Utkarsh Singh
+## Implemetation by [Utkarsh Singh](https://www.singhutkarsh.com/)
 
-### We go over the top 10 algorithms/coding concepts that are a must know before a technical interview:
+#### We go over the top 10 algorithms/coding concepts that are a must know before a technical interview:
 1. Depth first search. 
 2. Breadth first search.
 3. Matching parentheses problem (or a vairation of this.)
