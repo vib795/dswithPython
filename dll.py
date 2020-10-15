@@ -171,3 +171,20 @@ class DLL:
 
         print("Printing the updated list below:")
         self.printList()
+
+    def reverse(self):
+        """Reverses a doubly linked list and prints the result."""
+        temp = None
+        current = self.head
+
+        while current is not None:
+            temp = current.get_previous()
+            current.set_previous(current.get_next())
+            current.set_next(temp)
+            current = current.get_previous()
+
+        if temp is not None:
+            self.head = temp.get_previous()
+
+        print("Updated list is:")
+        self.printList()
