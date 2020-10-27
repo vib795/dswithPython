@@ -12,9 +12,9 @@ find the student with the best average and return both the name and the best ave
 
 scores = [
     ['Jerry', '65'],
-    ['Bob', '91'],
+    ['Bob', '2'],
     ['Jerry', '23'],
-    ['Eric', '83']
+    ['Eric', '3']
 ]
 
 def findBestAverage(scores):
