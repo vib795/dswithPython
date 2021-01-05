@@ -30,5 +30,12 @@ class twoSum:
                     return [i, j]
         return "No match found."
     
-obj = twoSum([2,7,11,15], 9)
-print(obj.twoSums())
+obj1 = twoSum([2,7,11,15], 9)
+obj2 = twoSum([3,2,4], 6)
+obj3 = twoSum([3,3], 6)
+obj4 = twoSum([1,1,1], 5)
+
+print(obj1.twoSums())
+print(obj2.twoSums())
+print(obj3.twoSums())
+print(obj4.twoSums())
