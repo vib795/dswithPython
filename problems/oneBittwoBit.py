@@ -28,4 +28,7 @@ class OnebitTwobit:
 
     def check(self):
         for i in range(len(self.listOfChars)):
+            if i == 0:
+                if self.listOfChars[i] == 0:
+                    self.oneBit = True
             pass
