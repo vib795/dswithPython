@@ -23,12 +23,9 @@ The only way to decode it is two-bit character and two-bit character. So the las
 class OnebitTwobit:
     def __init__(self, listOfChars):
         self.listOfChars = listOfChars
-        self.oneBit = False
-        self.twoBit = False
 
-    def check(self):
-        for i in range(len(self.listOfChars)):
-            if i == 0:
-                if self.listOfChars[i] == 0:
-                    self.oneBit = True
-            pass
+    def isOneBitCharacter(self):
+        i = 0
+        while i < len(self.listOfChars) - 1:
+            i += self.listOfChars[i] + 1
+        return i == len(self.listOfChars) - 1
