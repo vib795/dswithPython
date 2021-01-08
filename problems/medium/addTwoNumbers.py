@@ -17,3 +17,57 @@ Example 3:
 Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 '''
+class SllNode:
+    def __init__(self, data):
+        self.data   = data
+        self.next   = None
+
+class SLL:
+    def __init__(self):
+        self.head   = None
+
+    def append(self, data):
+        if self.head == None:
+            print("Adding the first element in the list...")
+            temp = SllNode(data)
+            self.head = temp
+            temp.next = None
+        else:
+            current = self.head
+            temp = SllNode(data)
+            previous = self.head
+            while current is not None:
+                previous = current
+                # print("Previous", previous)
+                current = current.next
+                # print("Current", current)
+            previous.next = temp
+
+    def printList(self):
+        if self.head is None:
+            print("The list is empty. Nothing to print.")
+        else:
+            current = self.head
+            while current is not None:
+                print(current.data)
+                current = current.next
+        pass
+
+class AddLL(SLL):
+    pass
+
+l1 = [2,4,3]
+l2 = [5,6,4]
+
+l1.reverse()
+l2.reverse()
+
+SLLObj1 = SLL()
+SLLObj2 = SLL()
+
+for i in l1:
+    SLLObj1.append(i)
+SLLObj1.printList()
+for i in l2:
+    SLLObj2.append(i)
+SLLObj2.printList()
