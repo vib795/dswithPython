@@ -28,5 +28,13 @@ class LongestRepeatingSubString:
         self.afterSplit = ''
 
     def check(self):
+        l = []
         self.afterSplit = [char for char in self.s]
-        pass
+        # for c in self.afterSplit:
+        #     print(c)
+        for i in range(len(0, self.afterSplit)):
+            if l[-1] != self.afterSplit[i]:
+                l.append(self.afterSplit.pop(i))
+
+obj = LongestRepeatingSubString('abcabcbb')
+obj.check()
