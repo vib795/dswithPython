@@ -25,7 +25,13 @@ Output: 2
 class ContainerWithMostWater:
     def __init__(self, heightArray):
         self.heightArray = heightArray
+        self.maxArea = 0
 
     def calculateArea(self):
-        
-        pass
+        for i in range(1, len(self.heightArray)):
+            if self.maxArea < i * self.heightArray[i]:
+                self.maxArea = i * self.heightArray[i]
+        return self.maxArea
+
+obj = ContainerWithMostWater([1,8,6,2,5,4,8,3,7])
+print(obj.calculateArea())
