@@ -21,3 +21,11 @@ Example 4:
 Input: height = [1,2,1]
 Output: 2
 '''
+
+class ContainerWithMostWater:
+    def __init__(self, heightArray):
+        self.heightArray = heightArray
+
+    def calculateArea(self):
+        
+        pass
