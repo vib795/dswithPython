@@ -43,3 +43,39 @@ Input: str = "-91283472332"
 Output: -2147483648
 Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer. Thefore INT_MIN (−231) is returned.
 '''
+import re 
+
+class StringToInteger:
+    def __init__(self, s):
+        self.s = s
+
+    def convertToInteger(self):
+        afterSplit = self.s.split()
+        # print(afterSplit)
+        for item in afterSplit:
+            if re.search('^[+-]?[0-9]+$', item) and abs(int(item)) <= 2**31 and item != 2**31 - 1:
+                return item
+            elif re.search('^[+-]?[0-9]+$', item) and (int(item) <= -2**31): #.__le__(-2147483648):
+                return (-2147483648)
+            elif re.search('^[+-]?[0-9]+$', item) and (int(item) >= 2**31 - 1): #.__ge__(2147483647):
+                return(2147483647)
+            else:
+                continue
+
+obj1 = StringToInteger("42")
+print(obj1.convertToInteger())
+
+obj2 = StringToInteger("   -42")
+print(obj2.convertToInteger())
+
+obj3 = StringToInteger("4193 with words")
+print(obj3.convertToInteger())
+
+obj4 = StringToInteger("words and 987")
+print(obj4.convertToInteger())
+
+obj5 = StringToInteger("-91283472332")
+print(obj5.convertToInteger())
+
+obj6 = StringToInteger("91283472332")
+print(obj6.convertToInteger())
