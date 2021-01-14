@@ -17,3 +17,36 @@ Input: nums = [0]
 Output: []
 '''
 
+class ThreeSum:
+    def __init__(self, arr):
+        self.arr = arr
+        self.result = []
+
+    def findThreeSum(self):
+        found = False
+        l = []
+        for i in range(len(self.arr)-1): 
+            # Find all pairs with sum  
+            # equals to "-arr[i]"  
+            s = set() 
+            for j in range(i + 1, len(self.arr)): 
+                x = -(self.arr[i] + self.arr[j]) 
+                if x in s:
+                    l+= [[x, self.arr[i], self.arr[j]]]
+                    found = True
+                else: 
+                    s.add(self.arr[j]) 
+        if found == False: 
+            return []
+        else:
+            new_l = list(set(tuple(sorted(sub)) for sub in l))
+            return [list(i) for i in new_l]
+
+
+obj1 = ThreeSum([-1,0,1,2,-1,-4])
+obj2 = ThreeSum([])
+obj3 = ThreeSum([0])
+
+print(obj1.findThreeSum())
+print(obj2.findThreeSum())
+print(obj3.findThreeSum())
