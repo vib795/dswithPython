@@ -13,3 +13,6 @@ Output: ["()"]
 class GenerateParentheses:
     def __init__(self, n):
         self.n = n
+
+    def genPara(self):
+        pass
