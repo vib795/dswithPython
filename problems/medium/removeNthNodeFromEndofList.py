@@ -31,7 +31,7 @@ class SLL:
         
     def printList(self):
         if self.head is None:
-            return "The list is empty. Nothing to return."
+            print("[]")
         else:
             count = 1
             current = self.head
@@ -52,15 +52,39 @@ class SLL:
         return size
 
     def removeNthNodeFromEndOfList(self, n):
-        pass
+        if self.head is None:
+            return "The list is empty."
+        else:
+            current = self.head
+            length = 0
+            while current is not None:
+                current = current.next
+                length +=1
+            # print(length)
+
+            # element to delete from the list 
+            eleCount = 1
+            # print(eleCount)
+            current = self.head
+            if length == 1:
+                self.head = None
+                # return("only one was available to remove.")
+            else:
+                while eleCount != (length - n):
+                    current = current.next
+                    eleCount += 1
+                # print("Current data: ", current.data)
+                current.next = current.next.next
+
+            
 
 obj = SLL()
-l = [1,2,3,4,5]
+l = [1,2,3,4,5,]
 for i in l[::-1]:
     obj.addToList(i)
 # obj.printList()
 # print("\n")
 # print(obj.getSize())
-obj.removeNthNodeFromEndOfList(4)
-# obj.printList()
+obj.removeNthNodeFromEndOfList(2)
+obj.printList()
 # print(obj.getSize())
