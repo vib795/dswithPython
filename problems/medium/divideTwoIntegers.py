@@ -31,6 +31,15 @@ class DivideTwoIntegers:
     def __init__(self, dividend, divisor):
         self.dividend = dividend
         self.divisor = divisor
+        self.quotient = 0
 
     def calculate(self):
-        pass
+        count = 0 
+        while count < self.divisor:
+            self.dividend = self.dividend - self.divisor
+            count += 1
+            # print(count)
+        print(count)
+        
+obj = DivideTwoIntegers(10, 3)
+obj.calculate()
