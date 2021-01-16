@@ -30,33 +30,40 @@ class SLL:
     
     def printList(self):
         if self.head is None:
-            print("The list is empty. Nothing to print")
+            return("The list is empty. Nothing to print")
         else:
+            l = []
             current = self.head
             while current is not None:
-                print(current.value)
+                # print(current.value)
+                l.append(current.value)
                 current = current.next
+            return l
 
     def swapNodesinPairs(self):
-        length = 0
+        temp = self.head
         if self.head is None:
-            print("[]")
+            print("Nothing to swap. The list is empty.")
         else:
-            current = self.head
-            while current is not None:
-                length += 1
-                current = current.next
-            
-            
-            first = self.head
-            second = first.next
+            while temp is not None and temp.next is not None:
+                if temp.value == temp.next.value:
+                    temp = temp.next.next
+                
+                else:
+                    temp.value, temp.next.value = temp.next.value, temp.value
+                    temp = temp.next.next
+            pass
+        pass
             
 
 
 
 obj = SLL()
-l = [1,2,3,4]
+l = [1,2,3,4,5]
 
 for i in l[::-1]:
     obj.addToLinkedList(i)
-obj.printList()
+print("Before:  ", obj.printList())
+# obj.printList()
+obj.swapNodesinPairs()
+print("After:   ", obj.printList())
