@@ -30,16 +30,27 @@ Output: 1
 class DivideTwoIntegers:
     def __init__(self, dividend, divisor):
         self.dividend = dividend
-        self.divisor = divisor
-        self.quotient = 0
+        if divisor > 0:
+            self.divisor = divisor
+            self.neg = False
+        if divisor < 0:
+            self.divisor = abs(divisor)
+            self.neg = True
+        if self.divisor == 0:
+            pass
 
     def calculate(self):
-        count = 0 
-        while count < self.divisor:
-            self.dividend = self.dividend - self.divisor
-            count += 1
-            # print(count)
-        print(count)
+        count = 0
+        if self.divisor == 0:
+            return "Cannot divide by zero."
+        else:
+            while self.dividend > self.divisor:
+                self.dividend -= self.divisor
+                count += 1
+            if self.neg == True:
+                return("-"+str(count))
+            else:
+                return(count)
         
-obj = DivideTwoIntegers(10, 3)
-obj.calculate()
+obj = DivideTwoIntegers(7, -3)
+print(obj.calculate())
