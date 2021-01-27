@@ -18,21 +18,21 @@ def insert(root,key):
             root.left = insert(root.left, key)
     return root
 
-# In - order traversal on the BST
+# In - order traversal on the BST - LEFT -> ROOT -> RIGHT
 def inOrderTraversal(root):
     if root:
         inOrderTraversal(root.left)
         print(root.val)
         inOrderTraversal(root.right)
 
-# Post - order traversal on the BST
+# Post - order traversal on the BST - LEFT -> RIGHT -> ROOT
 def postOrderTraversal(root):
     if root:
         postOrderTraversal(root.left)
         postOrderTraversal(root.right)
         print(root.val)
 
-# Pre - order traversal on the BST
+# Pre - order traversal on the BST - ROOT -> LEFT -> RIGHT
 def preOrderTraversal(root):
     if root:
         print(root.val)
