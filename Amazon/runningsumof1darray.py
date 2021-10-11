@@ -23,8 +23,27 @@ class Solution:
         self.nums   =   nums
 
     def runningSum(self):
-        
-        pass
+        runningSum = 0
+        l = []        
+        if len(self.nums) == 1:
+            return "Running sum is: " + str(self.nums[0])
+        if len(self.nums) == 0:
+            return "Length of the passed array is 0. Are you kidding me?"
+        if len(self.nums) >= 2:
+            for i in range(len(self.nums)):
+                if i == 0:
+                    runningSum = self.nums[i]
+                    l.append(runningSum)
+                else:
+                    runningSum = runningSum + self.nums[i]
+                    l.append(runningSum)
+        return l 
 
-# s1 = Solution([23,12,1,2,3])
-# s1.runningSum()
+s1 = Solution([1,2,3,4])
+print(s1.runningSum())
+
+s2 = Solution([1,1,1,1,1])
+print(s2.runningSum())
+
+s3 = Solution([3,1,2,10,1])
+print(s3.runningSum())
