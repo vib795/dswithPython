@@ -19,5 +19,13 @@ class Solution:
         self.stones =   stones
 
     def numJewelsInStones(self):
-        
-        pass
+        finalcount = 0
+        for i in list(self.stones):
+            finalcount = finalcount + list(self.jewels).count(i)
+        return finalcount
+
+s1 = Solution(jewels = "aA", stones = "aAAbbbb")
+print(s1.numJewelsInStones())
+
+s2 = Solution(jewels = "z", stones = "ZZ")
+print(s2.numJewelsInStones())
