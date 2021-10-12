@@ -18,9 +18,19 @@ Output
 
 class ParkingSystem:
     def __init__(self, big, medium, small):
-        self.big    =   big
-        self.medium =   medium
-        self.small  =   small
+        if type(big) is int:
+            self.big    =   big
+            if type(medium) is int:
+                self.medium =   medium
+                if type(small) is int:
+                    self.small  =   small
+                else:
+                    return "Small not an integer."
+            else:
+                return "Medium not an integer."
+        else:
+            return "Big not an integer."
 
     def addCar(self, carType):
+        
         pass
