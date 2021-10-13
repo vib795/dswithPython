@@ -28,3 +28,11 @@ Example 4:
 Input: products = ["havana"], searchWord = "tatiana"
 Output: [[],[],[],[],[],[],[]]
 '''
+
+class Solution:
+    def __init__(self, products, searchWord):
+        self.products   =   products
+        self.searchWord =   searchWord
+
+    def suggestWords(self):
+        pass
