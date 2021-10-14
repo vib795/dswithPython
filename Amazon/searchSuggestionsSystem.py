@@ -28,11 +28,38 @@ Example 4:
 Input: products = ["havana"], searchWord = "tatiana"
 Output: [[],[],[],[],[],[],[]]
 '''
+class Node:
+    def __init__(self, key):
+        self.val    =   key
+        self.left   =   None
+        self.right  =   None
 
-class Solution:
-    def __init__(self, products, searchWord):
-        self.products   =   products
-        self.searchWord =   searchWord
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    else:
+        if root.val == key:
+            return root
+        elif root.val < key: 
+            root.right = insert(root.right, key) 
+        else:
+            root.left = insert(root.left, key)
+    return root
 
-    def suggestWords(self):
-        pass
+# # In - order traversal on the BST - LEFT -> ROOT -> RIGHT
+# def inOrderTraversal(root):
+#     if root:
+#         inOrderTraversal(root.left)
+#         print(root.val)
+#         inOrderTraversal(root.right)
+
+products = ["mobile","mouse","moneypot","monitor","mousepad"]
+searchWord = list("mouse")
+print(searchWord)
+r = Node(searchWord[0])
+for i in range(1, len(searchWord)):
+    r = insert(r, searchWord[i])
+
+# # Print in - oder traversal of the BST 
+# print("Here is the in - order traversal:")
+# inOrderTraversal(r)
